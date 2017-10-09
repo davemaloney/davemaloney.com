@@ -33,7 +33,48 @@ module.exports = (options) => ({
         // for a list of loaders, see https://webpack.js.org/loaders/#styling
         test: /\.css$/,
         exclude: /node_modules/,
-        use: ['style-loader', 'css-loader'],
+        use: [
+          'style-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              modules: true,
+              importLoaders: 1,
+            },
+          },
+          {
+            loader: 'postcss-loader',
+            options: {
+              config: {
+                path: 'internals/webpack/postcss.config.js',
+              },
+            },
+          },
+        ],
+      },
+      {
+        // Preprocess .less files
+        test: /\.less$/,
+        exclude: /node_modules/,
+        use: [
+          'style-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              modules: true,
+              importLoaders: 1,
+            },
+          },
+          {
+            loader: 'postcss-loader',
+            options: {
+              config: {
+                path: 'internals/webpack/postcss.config.js',
+              },
+            },
+          },
+          'less-loader',
+        ],
       },
       {
         // Preprocess 3rd party .css files located in node_modules

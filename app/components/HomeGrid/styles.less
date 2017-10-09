@@ -1,0 +1,158 @@
+/* 
+  Based from this article from Divya Manian - 
+  http://nimbupani.com/using-background-clip-for-text-with-css-fallback.html
+  https://codepen.io/Jintos/pen/crlxk
+*/
+
+.wrapper {
+  height: 100%;
+  width: 100%;
+}
+
+.textWrap {
+  display: table;
+  width: 20%;
+  height: 33.3333%;
+  float: left;
+}
+
+.clipText {
+  font-family: 'Overpass Mono', monospace;
+  width: 100%;
+  height: 100%;
+  font-size: 7vw;
+  line-height: 1;
+  position: relative;
+  display: table-cell;
+  vertical-align: middle;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  /* Color fallback */
+  color: #fff;
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: rgba(255,255,255,.25);
+  background-size: cover;
+
+  &:before,
+  &:after {
+    position: absolute;
+    content: '';
+  }
+
+  &:before {
+    z-index: -2;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: inherit;
+    background-size: cover;
+  }
+  &:after {
+    position: absolute;
+    z-index: -1;
+    top: 50%;
+    left: 50%;
+    background-color: #fff;
+    border-radius: 50%;
+    height: 1.25em;
+    width: 1.25em;
+    transform: translate(-50%, -47.5%)
+  }
+}
+
+.red,
+.yellow,
+.blue,
+.green,
+.gray {
+  composes: clipText;
+}
+.red:after {
+  background-color: #da4167;
+}
+.yellow:after {
+  background-color: #f4d35e;
+}
+.blue:after {
+  background-color: #083d77;
+}
+.green:after {
+  background-color: #08a045;
+}
+.gray:after {
+  background-color: #395e66;
+}
+
+.imageOne {
+  background-image: url(../HomeGrid/images/IMG_0020.jpg);
+}
+.imageTwo {
+  background-image: url(../HomeGrid/images/IMG_0060.jpg);
+}
+.imageThree {
+  background-image: url(../HomeGrid/images/IMG_0078.jpg);
+}
+.imageFour {
+  background-image: url(../HomeGrid/images/IMG_0243.jpg);
+}
+.imageFive {
+  background-image: url(../HomeGrid/images/IMG_0324.jpg);
+}
+.imageSix {
+  background-image: url(../HomeGrid/images/IMG_0364.jpg);
+}
+.imageSeven {
+  background-image: url(../HomeGrid/images/IMG_0419.jpg);
+}
+.imageEight {
+  background-image: url(../HomeGrid/images/IMG_0565.jpg);
+}
+.imageNine {
+  background-image: url(../HomeGrid/images/IMG_0651.jpg);
+}
+.imageTen {
+  background-image: url(../HomeGrid/images/IMG_0675.jpg);
+}
+.imageEleven {
+  background-image: url(../HomeGrid/images/IMG_0709.jpg);
+}
+.imageTwelve {
+  background-image: url(../HomeGrid/images/IMG_0807.jpg);
+}
+.imageThirteen {
+  background-image: url(../HomeGrid/images/IMG_1133.jpg);
+}
+.imageFourteen {
+  background-image: url(../HomeGrid/images/IMG_1346.jpg);
+}
+.imageFifteen {
+  background-image: url(../HomeGrid/images/IMG_1715.jpg);
+}
+
+// Target something smaller than an iPad in portrait mode
+@media (max-width: 767px) and (orientation:portrait) {
+  .textWrap {
+    display: table;
+    width: 100%;
+    height: 30%;
+  }
+  .clipText {
+    font-size: 14vw;
+  }
+}
+
+// Target something smaller than an iPad in landscape mode
+@media (max-width: 1023px) and (orientation:landscape) {
+  .wrapper {
+    width: 300%;
+  }
+  .textWrap {
+    display: table;
+    width: 6.6667%;
+    height: 100%;
+    float: left;
+  }
+}
