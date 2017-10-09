@@ -35,6 +35,10 @@
   -webkit-text-fill-color: rgba(255,255,255,.25);
   background-size: cover;
 
+  @supports (-moz-appearance:meterbar) {
+    z-index: 1;
+  }
+
   &:before,
   &:after {
     position: absolute;
@@ -60,7 +64,15 @@
     height: 1.25em;
     width: 1.25em;
     transform: translate(-50%, -47.5%)
+
   }
+
+  @supports (-moz-appearance:meterbar) {
+    &:after{
+      transform: translate(-50%, -57.5%)
+    }
+  }
+
 }
 
 .red,
