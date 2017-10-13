@@ -1,16 +1,16 @@
 {
-  "name": "react-boilerplate",
-  "version": "3.5.0",
-  "description": "A highly scalable, offline-first foundation with the best DX and a focus on performance and best practices",
+  "name": "davemaloney.com",
+  "version": "0.1.0",
+  "description": "Personal website for a web developer, based on React Boilerplate 3.5.0",
   "repository": {
     "type": "git",
-    "url": "git://github.com/react-boilerplate/react-boilerplate.git"
+    "url": "git://github.com/davemaloney/davemaloney.com.git"
   },
   "engines": {
     "npm": ">=3",
     "node": ">=5"
   },
-  "author": "Max Stoiber",
+  "author": "Dave Maloney",
   "license": "MIT",
   "scripts": {
     "analyze:clean": "rimraf stats.json",
