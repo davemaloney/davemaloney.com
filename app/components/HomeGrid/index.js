@@ -5,6 +5,7 @@
 */
 
 import React from 'react';
+import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
 import styles from './styles.less';
@@ -44,9 +45,9 @@ HomeGrid.propTypes = {
 };
 
 LetterBlock.propTypes = {
-  letter: React.PropTypes.string,
-  color: React.PropTypes.string,
-  image: React.PropTypes.string,
+  letter: PropTypes.string,
+  color: PropTypes.string,
+  image: PropTypes.string,
 };
 
 export default HomeGrid;
