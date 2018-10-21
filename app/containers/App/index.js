@@ -13,14 +13,17 @@
 
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 import HomePage from 'containers/HomePage/Loadable';
 import NotFoundPage from 'containers/NotFoundPage/Loadable';
+import Bootstrap from 'containers/Bootstrap/Loadable';
 
 export default function App() {
   return (
     <Switch>
       <Route exact path="/" component={HomePage} />
+      <Route path="/tagmanagerdemo" component={Bootstrap} />
       <Route component={NotFoundPage} />
     </Switch>
   );
