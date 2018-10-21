@@ -12,12 +12,18 @@
 import React from 'react';
 // import { FormattedMessage } from 'react-intl';
 // import messages from './messages';
+import LoginContainer from '../LoginContainer';
 import HomeGrid from '../../components/HomeGrid';
 
-export default class HomePage extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
-  render() {
-    return (
+import styles from './styles.less';
+
+function Homepage() {
+  return (
+    <div className={styles.wrapper}>
+      <LoginContainer />
       <HomeGrid />
-    );
-  }
+    </div>
+  );
 }
+
+export default Homepage;
